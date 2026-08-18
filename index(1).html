@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#4b0719">
+<meta name="description" content="एक खास Raksha Bandhan शुभकामना ❤️">
+<title>आपके लिए एक खास Raksha Bandhan Wish ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+:root{
+ --wine:#3c0716;--wine2:#5b0b23;--wine3:#7b1434;--gold:#dca83e;--gold2:#f5ce71;
+ --cream:#fff8ea;--muted:rgba(255,248,234,.72);--glass:rgba(255,255,255,.075)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100svh;color:var(--cream);background:
+ radial-gradient(circle at 50% 8%,rgba(247,190,71,.17),transparent 24rem),
+ radial-gradient(circle at 0 80%,rgba(169,29,70,.22),transparent 24rem),
+ linear-gradient(145deg,#26040d 0%,#450818 50%,#2a040d 100%);
+ font-family:"DM Sans",system-ui,sans-serif;overflow-x:hidden}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+#particles{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.spark{position:absolute;width:4px;height:4px;border-radius:50%;background:#ffe4a0;box-shadow:0 0 12px #f2bf55;animation:spark 3.5s ease-in-out infinite}
+.petal{position:absolute;top:-30px;width:13px;height:20px;border-radius:100% 0 100% 0;background:linear-gradient(145deg,#ffc1d1,#b8325b);opacity:.75;animation:petal linear infinite}
+.petal:nth-child(even){border-radius:0 100% 0 100%}
+.shell{position:relative;z-index:2;min-height:100svh}
+.entry,.share-modal{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:22px;background:rgba(30,2,10,.76);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.entry{background:radial-gradient(circle at 50% 25%,rgba(231,174,56,.15),transparent 30rem),linear-gradient(145deg,#26040d,#5a0b23)}
+.entry.hide{opacity:0;visibility:hidden;pointer-events:none;transition:.65s}
+.card{position:relative;width:min(92vw,510px);padding:clamp(28px,6vw,48px);border:1px solid rgba(255,222,151,.2);border-radius:32px;text-align:center;background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035));box-shadow:0 30px 100px rgba(0,0,0,.5),inset 0 1px rgba(255,255,255,.13);animation:cardIn .8s cubic-bezier(.2,.8,.2,1)}
+.card:before{content:"";position:absolute;inset:9px;border:1px solid rgba(255,215,128,.08);border-radius:25px;pointer-events:none}
+.rakhi-mini{width:112px;height:112px;margin:0 auto 20px;position:relative;display:grid;place-items:center}
+.rakhi-mini .thread{position:absolute;width:108%;height:34px;border-radius:50%;background:repeating-linear-gradient(90deg,#8f421d 0 7px,#e4ad40 7px 13px,#70203a 13px 19px,#f4cf70 19px 25px)}
+.rakhi-mini .thread.a{transform:rotate(25deg)}.rakhi-mini .thread.b{transform:rotate(-25deg)}
+.rakhi-mini .center{z-index:3;width:69px;height:69px;border-radius:50%;display:grid;place-items:center;border:7px solid #edc15c;background:radial-gradient(circle at 35% 25%,#fff5c5,#d98b2e 52%,#76152f 100%);box-shadow:0 0 0 7px rgba(240,192,83,.11),0 14px 30px rgba(0,0,0,.35)}
+.rakhi-mini .center:after{content:"ॐ";font-family:Georgia,serif;font-size:29px;color:#fff0b5}
+.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:11px}
+.card h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.1rem,8vw,3.3rem);line-height:1.05;margin-bottom:12px}
+.card h1 span{color:var(--gold2)}
+.desc{color:var(--muted);font-size:.93rem;line-height:1.7;margin:0 auto 25px;max-width:390px}
+.name-input{width:100%;height:58px;border:2px solid transparent;border-radius:17px;background:#fffaf0;color:#40101c;text-align:center;outline:0;font-size:1rem;padding:0 18px}
+.name-input:focus{border-color:var(--gold2);box-shadow:0 0 0 4px rgba(245,206,113,.12)}
+.primary{width:100%;height:58px;margin-top:11px;border:0;border-radius:17px;background:linear-gradient(135deg,#ffe8aa,#e8b448);color:#3e0b13;font-weight:800;box-shadow:0 13px 30px rgba(0,0,0,.25),inset 0 1px #fff6d5;transition:.22s}
+.primary:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(0,0,0,.3)}
+.error{height:20px;margin-top:7px;color:#ffb4c7;font-size:.76rem}
+.main{display:none;min-height:100svh}.main.active{display:block;animation:show 1s ease}
+.hero{min-height:calc(100svh - 65px);display:grid;place-items:center;padding:45px 18px}
+.content{width:min(100%,1000px);text-align:center}
+.badge{display:inline-flex;padding:9px 15px;border:1px solid rgba(255,222,151,.16);border-radius:99px;background:rgba(255,255,255,.055);color:var(--gold2);font-size:.67rem;font-weight:700;letter-spacing:1.7px;text-transform:uppercase}
+.rakhi{position:relative;width:min(76vw,350px);height:min(76vw,350px);margin:25px auto 15px;display:grid;place-items:center}
+.rakhi:before{content:"";position:absolute;width:78%;height:78%;border-radius:50%;background:radial-gradient(circle,rgba(247,193,72,.2),transparent 65%);filter:blur(18px);animation:pulse 3s ease-in-out infinite}
+.rakhi-thread{position:absolute;width:100%;height:65px;border-radius:50%;background:repeating-linear-gradient(90deg,#6c1830 0 8px,#d38d29 8px 14px,#f2c85d 14px 20px,#a24820 20px 28px);filter:drop-shadow(0 12px 12px rgba(0,0,0,.2))}
+.rakhi-thread.x{transform:rotate(21deg)}.rakhi-thread.y{transform:rotate(-21deg)}
+.rakhi-flower{position:absolute;z-index:3;width:175px;height:175px;display:grid;place-items:center;animation:float 4s ease-in-out infinite}
+.petal-r{position:absolute;width:72px;height:105px;border-radius:80% 20% 80% 20%;background:linear-gradient(145deg,#fff0ad 0%,#e8b747 43%,#a7353d 100%);transform-origin:50% 100%;box-shadow:inset 0 2px 8px rgba(255,255,255,.45),0 6px 18px rgba(0,0,0,.22)}
+.petal-r:nth-child(1){transform:rotate(0) translateY(-34px)}.petal-r:nth-child(2){transform:rotate(60deg) translateY(-34px)}.petal-r:nth-child(3){transform:rotate(120deg) translateY(-34px)}.petal-r:nth-child(4){transform:rotate(180deg) translateY(-34px)}.petal-r:nth-child(5){transform:rotate(240deg) translateY(-34px)}.petal-r:nth-child(6){transform:rotate(300deg) translateY(-34px)}
+.rakhi-jewel{z-index:5;width:94px;height:94px;border-radius:50%;display:grid;place-items:center;border:8px double #f2c65f;background:radial-gradient(circle at 32% 25%,#fff7c7,#d98d2e 55%,#7e1430);box-shadow:0 0 0 8px rgba(239,188,72,.1),0 15px 35px rgba(0,0,0,.35),inset 0 2px 7px rgba(255,255,255,.5)}
+.rakhi-jewel span{font-family:Georgia,serif;color:#fff1bd;font-size:37px;text-shadow:0 2px 5px #6c142a}
+.main-eyebrow{color:var(--gold2);font-size:.7rem;letter-spacing:3px;font-weight:700;text-transform:uppercase}
+.greeting{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.45rem,8vw,5.7rem);line-height:1;letter-spacing:-2px;margin:12px auto 0;max-width:920px}
+.greeting .name{color:var(--gold2);text-shadow:0 0 30px rgba(245,206,113,.15)}
+.sub{max-width:650px;margin:18px auto 0;color:var(--muted);line-height:1.75;font-size:clamp(.9rem,2.5vw,1.03rem)}
+.quote-box{position:relative;width:min(100%,780px);margin:30px auto 0;padding:30px 36px;border:1px solid rgba(255,220,150,.14);border-radius:25px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:0 20px 55px rgba(0,0,0,.18);backdrop-filter:blur(15px)}
+.quote-mark{position:absolute;color:rgba(245,206,113,.12);font-family:Georgia;font-size:75px;line-height:1}.quote-mark.l{left:13px;top:3px}.quote-mark.r{right:13px;bottom:-25px}
+.quote{font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.05rem,3vw,1.4rem);line-height:1.75;color:#fff0d1;transition:.3s}.quote.fade{opacity:0;transform:translateY(8px)}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:23px}
+.share,.wa,.sound{height:55px;border-radius:16px;border:1px solid rgba(255,255,255,.12);font-weight:800;transition:.2s}
+.share{padding:0 25px;color:#3e0b13;background:linear-gradient(135deg,#ffe7a7,#e8b448);box-shadow:0 12px 28px rgba(0,0,0,.23)}
+.wa{padding:0 21px;color:white;background:rgba(255,255,255,.065)}.sound{width:55px;color:var(--gold2);background:rgba(255,255,255,.055)}
+.share:hover,.wa:hover,.sound:hover{transform:translateY(-3px)}
+.music-status{margin-top:8px;color:rgba(255,255,255,.4);font-size:.7rem}
+footer{min-height:65px;display:flex;align-items:center;justify-content:center;text-align:center;padding:15px;border-top:1px solid rgba(255,255,255,.07);background:rgba(22,2,8,.55);color:rgba(255,255,255,.5);font-size:.76rem}
+footer a{margin-left:5px;color:var(--gold2);font-weight:800;text-decoration:none}footer a:hover{text-decoration:underline}
+.share-modal{display:none}.share-modal.open{display:grid}
+.modal-card{width:min(92vw,460px);padding:30px 24px;border:1px solid rgba(255,220,150,.2);border-radius:27px;background:linear-gradient(145deg,#5a0b22,#350611);box-shadow:0 30px 100px rgba(0,0,0,.5);text-align:center}
+.modal-card h2{font-family:"Playfair Display",Georgia,serif;font-size:1.8rem;margin-bottom:9px}.modal-card p{color:var(--muted);font-size:.86rem;line-height:1.6;margin-bottom:20px}
+.modal-actions{display:flex;gap:9px}.modal-actions .primary{margin:0}.cancel{height:58px;padding:0 18px;border-radius:17px;color:white;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1)}
+.toast{position:fixed;z-index:300;left:50%;bottom:max(22px,env(safe-area-inset-bottom));width:min(calc(100% - 28px),440px);padding:14px 16px;border-radius:14px;background:#25040d;color:white;text-align:center;font-size:.8rem;box-shadow:0 20px 50px rgba(0,0,0,.4);transform:translate(-50%,100px);opacity:0;transition:.35s}.toast.show{transform:translate(-50%,0);opacity:1}
+@keyframes cardIn{from{opacity:0;transform:translateY(25px) scale(.97)}to{opacity:1;transform:none}}@keyframes show{from{opacity:0}to{opacity:1}}@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}@keyframes pulse{0%,100%{transform:scale(.88);opacity:.6}50%{transform:scale(1.1);opacity:1}}@keyframes spark{0%,100%{opacity:.12;transform:scale(.5)}50%{opacity:1;transform:scale(1.4)}}@keyframes petal{from{transform:translate3d(0,-40px,0) rotate(0)}to{transform:translate3d(var(--drift),110vh,0) rotate(700deg)}}
+@media(max-width:380px){.card{padding:25px 18px;border-radius:25px}.rakhi{width:220px;height:220px}.rakhi-flower{transform:scale(.78)}.greeting{font-size:2.25rem;letter-spacing:-1px}.quote-box{padding:23px 18px}.quote{font-size:1rem}.share{width:100%}.wa{flex:1}.sound{width:55px}}
+@media(min-width:800px){.hero{padding-top:60px}.rakhi{width:310px;height:310px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="particles"></div>
+<div class="shell">
+
+<section class="entry" id="entry">
+ <div class="card">
+  <div class="rakhi-mini"><div class="thread a"></div><div class="thread b"></div><div class="center"></div></div>
+  <div class="eyebrow">एक खास शुभकामना आपके लिए</div>
+  <h1>Happy <span>Raksha Bandhan</span></h1>
+  <p class="desc">अपना नाम लिखिए और आपके लिए तैयार की गई खास Raksha Bandhan शुभकामना खोलिए। ❤️</p>
+  <form id="entryForm">
+   <input class="name-input" id="recipientInput" maxlength="40" autocomplete="name" placeholder="अपना नाम लिखें" aria-label="अपना नाम लिखें">
+   <div class="error" id="entryError"></div>
+   <button class="primary" type="submit">✨ मेरी शुभकामना खोलें</button>
+  </form>
+ </div>
+</section>
+
+<main class="main" id="main">
+ <section class="hero">
+  <div class="content">
+   <div class="badge">✦ &nbsp; आपके लिए एक खास संदेश &nbsp; ✦</div>
+
+   <div class="rakhi">
+    <div class="rakhi-thread x"></div><div class="rakhi-thread y"></div>
+    <div class="rakhi-flower">
+     <i class="petal-r"></i><i class="petal-r"></i><i class="petal-r"></i><i class="petal-r"></i><i class="petal-r"></i><i class="petal-r"></i>
+     <div class="rakhi-jewel"><span>ॐ</span></div>
+    </div>
+   </div>
+
+   <div class="main-eyebrow">रक्षा बंधन की हार्दिक शुभकामनाएँ</div>
+   <h1 class="greeting">Happy Raksha Bandhan,<br><span class="name" id="recipientName">आपको</span> ❤️</h1>
+   <p class="sub">ईश्वर करे आपके जीवन में हमेशा खुशियाँ, प्यार और अपनों का साथ बना रहे। यह खूबसूरत रिश्ता हर साल और भी मजबूत हो।</p>
+
+   <div class="quote-box">
+    <span class="quote-mark l">“</span>
+    <p class="quote" id="quote">राखी सिर्फ एक धागा नहीं, यह प्यार, विश्वास और हमेशा साथ निभाने का खूबसूरत वादा है। ❤️</p>
+    <span class="quote-mark r">”</span>
+   </div>
+
+   <div class="actions">
+    <button class="share" id="shareBtn">🎁 यह शुभकामना शेयर करें</button>
+    <button class="wa" id="waBtn">💬 WhatsApp</button>
+    <button class="sound" id="soundBtn" aria-label="Music control">🔇</button>
+   </div>
+   <div class="music-status" id="musicStatus">Music शुरू करने के लिए 🔇 दबाएँ</div>
+  </div>
+ </section>
+ <footer>
+  Designed &amp; Developed by
+  <a href="https://askctechnologies.in" target="_blank" rel="noopener noreferrer">ASKC TECHNOLOGIES</a>
+ </footer>
+</main>
+
+<!-- Share-name dialog -->
+<div class="share-modal" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+ <div class="modal-card">
+  <div class="eyebrow">एक और छोटा सा कदम</div>
+  <h2 id="shareTitle">आपका नाम क्या है?</h2>
+  <p>नाम लिखिए। लिंक खोलने वाले व्यक्ति को संदेश मिलेगा कि आपने उसके लिए यह Raksha Bandhan wish भेजी है।</p>
+  <input class="name-input" id="senderInput" maxlength="40" placeholder="अपना नाम लिखें" autocomplete="name">
+  <div class="error" id="senderError"></div>
+  <div class="modal-actions">
+   <button class="cancel" id="cancelShare">रद्द करें</button>
+   <button class="primary" id="createShare">शेयर लिंक बनाएं</button>
+  </div>
+ </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Put your own licensed/royalty-free music file in the repository with this exact name. -->
+<audio id="music" loop preload="metadata">
+ <source src="raksha-bandhan.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const entry=$("entry"),main=$("main"),recipientInput=$("recipientInput"),recipientName=$("recipientName");
+const entryForm=$("entryForm"),entryError=$("entryError"),shareModal=$("shareModal"),senderInput=$("senderInput"),senderError=$("senderError");
+const shareBtn=$("shareBtn"),waBtn=$("waBtn"),createShare=$("createShare"),cancelShare=$("cancelShare");
+const soundBtn=$("soundBtn"),musicStatus=$("musicStatus"),music=$("music"),quoteEl=$("quote"),toast=$("toast");
+
+const quotes=[
+ "राखी सिर्फ एक धागा नहीं, यह प्यार, विश्वास और हमेशा साथ निभाने का खूबसूरत वादा है। ❤️",
+ "दूरी चाहे कितनी भी हो, भाई-बहन का रिश्ता दिलों को हमेशा जोड़े रखता है। 🫶",
+ "बचपन की सबसे प्यारी यादों में अक्सर भाई-बहन की शरारतें और हँसी शामिल होती हैं। 🌸",
+ "रिश्ते वही खास होते हैं जिनमें शिकायतें भी हों और एक-दूसरे के लिए हमेशा खड़े रहने का भरोसा भी। ❤️",
+ "इस रक्षा बंधन पर आपके जीवन में खुशियाँ, सफलता और अपनों का प्यार हमेशा बना रहे। ✨",
+ "एक छोटी सी राखी, ढेर सारा प्यार और जीवनभर साथ निभाने का खूबसूरत एहसास। 🪷"
+];
+let qi=0;
+
+function clean(v){return v.trim().replace(/\s+/g," ").replace(/[<>]/g,"").slice(0,40)}
+function urlFor(recipient,sender=""){
+ const u=new URL(location.href);u.searchParams.set("name",recipient);
+ if(sender)u.searchParams.set("from",sender);else u.searchParams.delete("from");
+ return u.toString();
+}
+function toastMsg(msg){toast.textContent=msg;toast.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>toast.classList.remove("show"),2800)}
+function buildParticles(){
+ if($("particles").dataset.done)return;
+ $("particles").dataset.done="1";
+ const root=$("particles");
+ const n=innerWidth<600?24:45;
+ for(let i=0;i<n;i++){
+  const s=document.createElement("span");s.className="spark";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";s.style.animationDelay=Math.random()*4+"s";root.appendChild(s)
+ }
+ const p=innerWidth<600?18:34;
+ for(let i=0;i<p;i++){
+  const x=document.createElement("span");x.className="petal";x.style.left=Math.random()*100+"%";x.style.setProperty("--drift",(Math.random()*220-110)+"px");x.style.animationDuration=(7+Math.random()*8)+"s";x.style.animationDelay=(-Math.random()*14)+"s";root.appendChild(x)
+ }
+}
+async function playMusic(){
+ try{await music.play();soundBtn.textContent="🔊";musicStatus.textContent="Music चल रहा है · बंद करने के लिए 🔊 दबाएँ"}
+ catch{soundBtn.textContent="🔇";musicStatus.textContent="Music चलाने के लिए 🔇 दबाएँ"}
+}
+soundBtn.onclick=()=>music.paused?playMusic():(music.pause(),soundBtn.textContent="🔇",musicStatus.textContent="Music बंद है · चलाने के लिए 🔇 दबाएँ");
+
+function openWish(name,replace=true){
+ name=clean(name);
+ if(name.length<2){entryError.textContent="कृपया सही नाम लिखें।";recipientInput.focus();return}
+ entryError.textContent="";recipientName.textContent=name;entry.classList.add("hide");main.classList.add("active");buildParticles();
+ if(replace)history.replaceState({}, "", urlFor(name));
+ playMusic();
+}
+entryForm.onsubmit=e=>{e.preventDefault();openWish(recipientInput.value,true)}
+
+function showShareDialog(){senderError.textContent="";senderInput.value="";shareModal.classList.add("open");setTimeout(()=>senderInput.focus(),100)}
+function closeShare(){shareModal.classList.remove("open")}
+shareBtn.onclick=showShareDialog;cancelShare.onclick=closeShare;
+shareModal.addEventListener("click",e=>{if(e.target===shareModal)closeShare()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeShare()});
+
+createShare.onclick=async()=>{
+ const sender=clean(senderInput.value),recipient=clean(recipientName.textContent);
+ if(sender.length<2){senderError.textContent="कृपया अपना नाम लिखें।";senderInput.focus();return}
+ const link=urlFor(recipient,sender);
+ const text=`${sender} ने आपको Raksha Bandhan का कुछ खास भेजा है ❤️\n\nदेखने के लिए इस लिंक पर क्लिक करें 👇`;
+ const full=text+"\n\n"+link;
+ closeShare();
+ if(navigator.share){
+  try{await navigator.share({title:"आपके लिए एक खास Raksha Bandhan Wish ❤️",text,url:link});return}
+  catch(e){if(e?.name==="AbortError")return}
+ }
+ try{await navigator.clipboard.writeText(full);toastMsg("शेयर मैसेज और लिंक कॉपी हो गया ❤️")}
+ catch{toastMsg("लिंक कॉपी नहीं हो सका। कृपया ब्राउज़र से URL कॉपी करें।")}
+};
+
+waBtn.onclick=()=>{
+ const recipient=clean(recipientName.textContent);
+ const sender=clean(new URLSearchParams(location.search).get("from")||"");
+ if(!sender){showShareDialog();return}
+ const text=`${sender} ने आपको Raksha Bandhan का कुछ खास भेजा है ❤️\n\nदेखने के लिए इस लिंक पर क्लिक करें 👇\n\n${urlFor(recipient,sender)}`;
+ open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener,noreferrer");
+};
+
+setInterval(()=>{
+ if(!main.classList.contains("active"))return;
+ quoteEl.classList.add("fade");
+ setTimeout(()=>{qi=(qi+1)%quotes.length;quoteEl.textContent=quotes[qi];quoteEl.classList.remove("fade")},300)
+},5000);
+
+addEventListener("DOMContentLoaded",()=>{
+ const p=new URLSearchParams(location.search),name=clean(p.get("name")||"");
+ if(name){recipientInput.value=name;openWish(name,false)}
+});
+</script>
+</div>
+</body>
+</html>
