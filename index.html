@@ -412,26 +412,8 @@ function clean(v){
   return String(v||"").trim().replace(/\s+/g," ").replace(/[<>]/g,"").slice(0,40);
 }
 
-/*
-  SILENT NAME LOGGING
-  ---------------------------------------------------------------
-  Every time someone opens their wish, their name (and the sender's
-  name, if known) is quietly sent to a Google Sheet you control.
-  Nothing is shown to the visitor and nothing blocks the page.
 
-  SETUP (one-time, ~5 minutes):
-  1. Create a new Google Sheet.
-  2. Extensions -> Apps Script. Delete the placeholder code and paste
-     the doPost() script from the setup guide provided with this file.
-  3. Deploy -> New deployment -> type "Web app".
-       Execute as: Me
-       Who has access: Anyone
-  4. Click Deploy, authorize it, then copy the "Web app URL".
-  5. Paste that URL below, replacing YOUR_APPS_SCRIPT_URL_HERE.
-  Until you do this, LOG_URL stays empty and logging is skipped
-  automatically -- the page works fine either way.
-*/
-const LOG_URL = ""; // <-- paste your Google Apps Script Web app URL here
+const LOG_URL = "https://script.google.com/macros/s/AKfycbyQ8kKibTq1ttXv4YJHWU8SnhjjqlVw2qIyhrAZxOy1y9So_jW7Z0n6nN6k0PiOQ7ZJ/exec"; // <-- paste your Google Apps Script Web app URL here
 
 function logVisit(recipient, sender){
   if(!LOG_URL) return; // not configured yet -- skip silently
