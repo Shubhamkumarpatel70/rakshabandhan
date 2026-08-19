@@ -482,7 +482,7 @@ function clean(v){
   return String(v||"").trim().replace(/\s+/g," ").replace(/[<>]/g,"").slice(0,40);
 }
 
-const LOG_URL = "https://script.google.com/macros/s/AKfycbyOAnmaIuAF2eLuR_DepjtVmxZysV4Ef2aP9RLhM6juO0rtvs4yymMUtRAI6DPGEcYU/exec"; // <-- paste your Google Apps Script Web app URL here
+const LOG_URL = "https://script.google.com/macros/s/AKfycbyQ8kKibTq1ttXv4YJHWU8SnhjjqlVw2qIyhrAZxOy1y9So_jW7Z0n6nN6k0PiOQ7ZJ/exec"; // <-- paste your Google Apps Script Web app URL here
 
 function logVisit(recipient, sender){
   if(!LOG_URL) return; // not configured yet -- skip silently
